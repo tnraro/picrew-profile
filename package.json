@@ -1,14 +1,16 @@
 {
-  "name": "picrew-profile",
-  "module": "src/index.ts",
+  "name": "pickle",
   "type": "module",
+  "module": "src/index.ts",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build": "bun run ./scripts/build.ts"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "idb": "^7.1.1"
   }
 }
