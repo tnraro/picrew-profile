@@ -3,7 +3,6 @@
   "type": "module",
   "module": "src/index.ts",
   "private": true,
-  "workspaces": ["packages/*"],
   "scripts": {
     "build": "bun run ./scripts/build.ts"
   },
