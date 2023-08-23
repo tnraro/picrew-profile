@@ -18,6 +18,7 @@ export interface PicrewParts {
 export interface Pickle {
   picrew_id: string; // link to image_maker_id
   pickle_id: string; // UUID
+  pickle_name: string;
   parts: PicrewParts[];
 }
 

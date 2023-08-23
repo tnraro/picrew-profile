@@ -19,8 +19,13 @@ export const getPickle = async (picrewId: string, pickleId: string) => {
   return await db.get(pickle_pickles, [picrewId, pickleId]);
 }
 
-export const setPickle = async (picrewId: string, pickleId: string, parts: PicrewParts[]) => {
-  await db.put(pickle_pickles, { picrew_id: picrewId, pickle_id: pickleId, parts });
+export const setPickle = async (picrewId: string, pickleId: string, pickleName: string, parts: PicrewParts[]) => {
+  await db.put(pickle_pickles, {
+    picrew_id: picrewId,
+    pickle_id: pickleId,
+    pickle_name: pickleName,
+    parts
+  });
 }
 
 window.api_pickle_model = {
