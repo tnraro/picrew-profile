@@ -28,6 +28,13 @@ export const setPickle = async (picrewId: string, pickleId: string, pickleName: 
   });
 }
 
+export const removePickle = async (picrewId: string, pickleId: string) => {
+  await db.delete(pickle_pickles, [
+    picrewId,
+    pickleId
+  ]);
+}
+
 window.api_pickle_model = {
   getPickles,
   setPickle,
