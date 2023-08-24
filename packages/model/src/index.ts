@@ -1,3 +1,3 @@
 export * as pickle from "./pickle";
 export * as picrew from "./picrew";
-export * from "./types.d.ts";
+export type * from "./types.d.ts";
