@@ -1,0 +1,108 @@
+@mixin input-base {
+  appearance: none;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+@mixin input {
+  @include input-base;
+}
+
+@mixin button {
+  @include input-base;
+  display: flex;
+  ---bg-h: 0deg;
+  ---bg-s: 0%;
+  ---bg-l: 90%;
+  ---text-h: 0deg;
+  ---text-s: 0%;
+  ---text-l: 10%;
+  color: hsl(var(---text-h), var(---text-s), var(---text-l));
+  background: hsl(var(---bg-h) var(---bg-s) var(---bg-l));
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+
+  transition: background 0.1s ease-in-out;
+
+  &:hover {
+    ---bg-l: 87%;
+  }
+
+  &:active {
+    ---bg-l: 80%;
+  }
+}
+
+@mixin button--active {
+  ---bg-l: 50%;
+  ---text-l: 90%;
+
+  &:hover {
+    ---bg-l: 47%;
+  }
+
+  &:active {
+    ---bg-l: 40%;
+  }
+}
+
+@mixin button--primary {
+  ---bg-h: 34deg;
+  ---bg-s: 80%;
+  ---bg-l: 80%;
+  ---text-h: 34deg;
+  ---text-s: 80%;
+  ---text-l: 15%;
+
+  &:hover {
+    ---bg-l: 77%;
+  }
+
+  &:active {
+    ---bg-l: 70%;
+  }
+}
+@mixin button--error {
+  ---bg-h: 0deg;
+  ---bg-s: 80%;
+  ---bg-l: 80%;
+  ---text-h: 0deg;
+  ---text-s: 80%;
+  ---text-l: 20%;
+
+  &:hover {
+    ---bg-l: 77%;
+  }
+
+  &:active {
+    ---bg-l: 70%;
+  }
+}
+@mixin dialog {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-top-left-radius: 0;
+  max-width: 32rem;
+}
+
+@mixin dialog__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  word-break: break-all;
+}
+
+@mixin dialog__options {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+}
