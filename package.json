@@ -3,12 +3,6 @@
   "type": "module",
   "module": "src/index.ts",
   "private": true,
-  "scripts": {
-    "build": "bun run ./scripts/build.ts"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
-  },
   "peerDependencies": {
     "typescript": "^5.0.0"
   }
