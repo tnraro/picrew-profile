@@ -1,7 +1,5 @@
 <script lang="ts">
   import { pickle, type Pickle as PickleModel } from "@pickle/model";
-  import Heart from "lucide-svelte/dist/svelte/icons/heart.svelte";
-  import LayoutList from "lucide-svelte/dist/svelte/icons/layout-list.svelte";
   import { onMount } from "svelte";
   import Modal from "./libs/Modal.svelte";
   import { currentPicrewId } from "./libs/utils";
@@ -10,6 +8,7 @@
   import PickleItemList from "./PickleItemList.svelte";
   import PickleItemName from "./PickleItemName.svelte";
   import PickleItemRemoveButton from "./PickleItemRemoveButton.svelte";
+  import Icon from "./Icon.svelte";
 
   let isFormOpen = false;
   let formTop = 0;
@@ -43,7 +42,7 @@
       on:click={() => (isListOpen = !isListOpen)}
       title="Toggle Pickle List"
     >
-      <LayoutList size={16} />
+      <Icon icon="layout-list" size={16} />
     </button>
     <button
       class="pickle__button"
@@ -51,7 +50,7 @@
       on:click={openForm}
       title="Save Current Pickle"
     >
-      <Heart size={16} />
+      <Icon icon="heart" size={16} />
     </button>
     <Modal bind:isOpen={isFormOpen} top={formTop} left={formLeft}>
       <PickleForm
