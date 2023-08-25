@@ -34,7 +34,13 @@
 </script>
 
 <div class="pickle">
-  Pickle
+  <a
+    href="https://github.com/tnraro/pickle"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Pickle
+  </a>
   <nav class="pickle__nav">
     <button
       class="pickle__button"
