@@ -22,4 +22,5 @@ sed -i -r "s/^(\/\/ @version ).+?$/\1$v/g" "$p"
 git add -p "$p"
 git commit -S -m "$1"
 git tag "$1"
-git push --tags
+git push
+git push origin "$1"
