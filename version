@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: ./version [version]"
+  latestVersion=$(git describe --tags --abbrev=0)
+  echo "Latest version: $latestVersion"
+  exit
+fi
+if [[ "$1" != v* ]]; then
+  echo "The version must start with 'v'"
+  exit
+fi
+
+v=${1#v}
+echo "version: $v"
+
+# replacements
+
+p="packages/build/src/userscript-template.js"
+sed -i -r "s/^(\/\/ @version ).+?$/\1$v/g" "$p"
+
+git add -p "$p"
+git commit -S -m "$1"
+git tag "$1"
+git push --tags
