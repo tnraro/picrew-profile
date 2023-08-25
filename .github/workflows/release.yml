@@ -26,10 +26,8 @@ jobs:
       - run: pnpm install
       - run: pnpm -F ui build
       - run: pnpm -F build build
-      - name: "release"
-        uses: "marvinpinto/action-automatic-releases@latest"
+      - name: release
+        uses: softprops/action-gh-release@v1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
           files: |
             packages/build/pickle.user.js
