@@ -11,6 +11,7 @@ jobs:
     name: "Release"
     runs-on: "ubuntu-latest"
     steps:
+      - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
           version: 8
@@ -22,7 +23,6 @@ jobs:
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-      - uses: actions/checkout@v3
       - run: pnpm install
       - run: pnpm -F ui build
       - run: pnpm -F build build
