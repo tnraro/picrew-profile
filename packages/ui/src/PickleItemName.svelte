@@ -23,7 +23,7 @@
   };
 </script>
 
-<button class="pickle-item-name" on:click={applyPickle}>
+<button class="pickle-item-name" on:click={applyPickle} title={name}>
   <span class="pickle-item-name__value">
     {name}
   </span>
