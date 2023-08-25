@@ -87,6 +87,9 @@
 <style lang="scss">
   @use "./base.scss";
   .pickle {
+    display: flex;
+    flex-flow: column;
+    gap: 0.5rem;
     &__nav {
       display: flex;
       gap: 0.5rem;
