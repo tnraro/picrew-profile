@@ -35,7 +35,11 @@
   });
 </script>
 
-<button class="pickle-item__remove-button" on:click={openDialog}>
+<button
+  class="pickle-item__remove-button"
+  on:click={openDialog}
+  title="Delete pickle"
+>
   <Icon icon="heart-off" size={16} />
 </button>
 <Modal bind:isOpen {top} {left}>
