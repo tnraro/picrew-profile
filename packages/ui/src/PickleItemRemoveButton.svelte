@@ -1,10 +1,9 @@
 <script lang="ts">
   import { pickle } from "@pickle/model";
   import Modal from "./libs/Modal.svelte";
-  import AlertTriangle from "lucide-svelte/dist/svelte/icons/alert-triangle.svelte";
-  import HeartOff from "lucide-svelte/dist/svelte/icons/heart-off.svelte";
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
+  import Icon from "./Icon.svelte";
   let top = 0;
   let left = 0;
   let isOpen = false;
@@ -37,13 +36,13 @@
 </script>
 
 <button class="pickle-item__remove-button" on:click={openDialog}>
-  <HeartOff size={16} />
+  <Icon icon="heart-off" size={16} />
 </button>
 <Modal bind:isOpen {top} {left}>
   <div class="pickle-item-dialog" role="dialog">
     <h1 class="pickle-item-dialog__title">
       <div class="pickle-item-dialog__title-icon">
-        <AlertTriangle size={20} />
+        <Icon icon="alert-triangle" size={20} />
       </div>
       Delete "{name}"
     </h1>

@@ -21,7 +21,6 @@
     "vite": "^4.4.9"
   },
   "dependencies": {
-    "@pickle/model": "workspace:^",
-    "lucide-svelte": "^0.268.0"
+    "@pickle/model": "workspace:^"
   }
 }
