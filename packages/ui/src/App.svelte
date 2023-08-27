@@ -70,7 +70,7 @@
   </nav>
   {#if isListOpen}
     <PickleItemList>
-      {#each pickles as p}
+      {#each pickles as p (p.pickle_id)}
         <Pickle
           picrewId={p.picrew_id}
           pickleId={p.pickle_id}
