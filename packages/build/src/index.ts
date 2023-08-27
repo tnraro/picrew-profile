@@ -1,3 +1,5 @@
+/// <reference types="bun-types" />
+
 import { dirname, join } from "path";
 
 const __dirname = dirname(new URL(import.meta.url).pathname);
