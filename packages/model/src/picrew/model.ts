@@ -30,7 +30,6 @@ export const clearParts = async (picrewId: string) => {
   const store = tx.store;
   const index = store.index(picrew_parts_index);
   for await (const cursor of index.iterate(picrewId)) {
-    console.log(cursor.value);
     await cursor.delete();
   }
 }
