@@ -10,11 +10,11 @@
     getContext<Writable<{ name: string; pickleId: string; picrewId: string }>>(
       "context"
     );
-  context.subscribe((context) => {
-    name = context.name;
-    pickleId = context.pickleId;
-    picrewId = context.picrewId;
-  });
+  $: {
+    name = $context.name;
+    pickleId = $context.pickleId;
+    picrewId = $context.picrewId;
+  }
   const applyPickle = async () => {
     const p = await pickle.getPickle(picrewId, pickleId);
     if (p == null) throw new Error(`pickle "${pickleId}" is empty`);

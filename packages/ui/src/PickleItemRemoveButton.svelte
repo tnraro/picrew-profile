@@ -30,11 +30,11 @@
   let pickleId = "";
   let picrewId = "";
   let name = "";
-  context.subscribe((context) => {
-    pickleId = context.pickleId;
-    picrewId = context.picrewId;
-    name = context.name;
-  });
+  $: {
+    name = $context.name;
+    pickleId = $context.pickleId;
+    picrewId = $context.picrewId;
+  }
 </script>
 
 <button

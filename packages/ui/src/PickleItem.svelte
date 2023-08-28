@@ -12,9 +12,7 @@
     name,
   });
 
-  $: context.update((context) => ({ ...context, pickleId }));
-  $: context.update((context) => ({ ...context, picrewId }));
-  $: context.update((context) => ({ ...context, name }));
+  $: $context = { pickleId, picrewId, name };
 
   setContext("context", context);
 </script>
