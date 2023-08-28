@@ -23,16 +23,14 @@
   };
 </script>
 
-<button class="pickle-item-name" on:click={applyPickle} title={name}>
-  <span class="pickle-item-name__value">
+<button class="pk-button name" on:click={applyPickle} title={name}>
+  <span class="name__value">
     {name}
   </span>
 </button>
 
 <style lang="scss">
-  @use "./base.scss";
-  .pickle-item-name {
-    @include base.button;
+  .name {
     flex: 1;
     ---bg-l: 100%;
     max-width: 200px;

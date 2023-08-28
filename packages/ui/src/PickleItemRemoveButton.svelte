@@ -38,29 +38,29 @@
 </script>
 
 <button
-  class="pickle-item__remove-button"
+  class="pk-button pk-button--error"
   on:click={openDialog}
   title="Delete pickle"
 >
   <Icon icon="heart-off" size={16} />
 </button>
 <Modal bind:isOpen {top} {left}>
-  <div class="pickle-item-dialog" role="dialog">
-    <h1 class="pickle-item-dialog__title">
-      <div class="pickle-item-dialog__title-icon">
+  <div class="pk-dialog" role="dialog">
+    <h1 class="pk-dialog__title">
+      <div class="icon">
         <Icon icon="alert-triangle" size={20} />
       </div>
       Delete "{name}"
     </h1>
-    <div class="pickle-item-dialog__options">
+    <div class="pk-dialog__options">
       <button
-        class="pickle-item-dialog__option"
+        class="pk-button"
         on:click={() => (isOpen = false)}
       >
         cancel
       </button>
       <button
-        class="pickle-item-dialog__option pickle-item-dialog__option--error"
+        class="pk-button pk-button--error"
         on:click={removePickleItem}
       >
         delete
@@ -70,34 +70,7 @@
 </Modal>
 
 <style lang="scss">
-  @use "./base.scss";
-  .pickle-item {
-    &__remove-button {
-      @include base.button;
-      @include base.button--error;
-    }
-    &-dialog {
-      @include base.dialog;
-
-      &__title {
-        @include base.dialog__title;
-
-        &-icon {
-          flex-shrink: 0;
-        }
-      }
-
-      &__options {
-        @include base.dialog__options;
-      }
-
-      &__option {
-        @include base.button;
-      }
-
-      &__option--error {
-        @include base.button--error;
-      }
-    }
+  .icon {
+    flex-shrink: 0;
   }
 </style>

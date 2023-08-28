@@ -21,44 +21,22 @@
   };
 </script>
 
-<form class="pickle-form" on:submit|preventDefault={onSubmit}>
-  <h1 class="pickle-form__title">Save current pickle</h1>
-  <label class="pickle-form__label">
+<form class="pk-dialog" on:submit|preventDefault={onSubmit}>
+  <h1 class="pk-dialog__title">Save current pickle</h1>
+  <label>
     name
-    <input class="pickle-form__input" name="name" required />
+    <input class="pk-input" name="name" required />
   </label>
-  <div class="pickle-form__options">
+  <div class="pk-dialog__options">
     <button
       type="reset"
-      class="pickle-form__option"
+      class="pk-button"
       on:click={() => dispatch("cancel")}
     >
       cancel
     </button>
-    <button class="pickle-form__option pickle-form__option--primary">
+    <button class="pk-button pk-button--primary">
       save
     </button>
   </div>
 </form>
-
-<style lang="scss">
-  @use "./base.scss";
-  .pickle-form {
-    @include base.dialog;
-    &__title {
-      @include base.dialog__title;
-    }
-
-    &__options {
-      @include base.dialog__options;
-    }
-
-    &__option {
-      @include base.button;
-
-      &--primary {
-        @include base.button--primary;
-      }
-    }
-  }
-</style>

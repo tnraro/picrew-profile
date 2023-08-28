@@ -5,11 +5,11 @@
   padding: 0.25rem 0.5rem;
 }
 
-@mixin input {
+.pk-input {
   @include input-base;
 }
 
-@mixin button {
+.pk-button {
   @include input-base;
   display: flex;
   ---bg-h: 0deg;
@@ -33,54 +33,56 @@
   &:active {
     ---bg-l: 80%;
   }
+
+  &--active {
+    ---bg-l: 50%;
+    ---text-l: 90%;
+
+    &:hover {
+      ---bg-l: 47%;
+    }
+
+    &:active {
+      ---bg-l: 40%;
+    }
+  }
+
+  &--primary {
+    ---bg-h: 34deg;
+    ---bg-s: 80%;
+    ---bg-l: 80%;
+    ---text-h: 34deg;
+    ---text-s: 80%;
+    ---text-l: 15%;
+
+    &:hover {
+      ---bg-l: 77%;
+    }
+
+    &:active {
+      ---bg-l: 70%;
+    }
+  }
+
+  &--error {
+    ---bg-h: 0deg;
+    ---bg-s: 80%;
+    ---bg-l: 80%;
+    ---text-h: 0deg;
+    ---text-s: 80%;
+    ---text-l: 20%;
+
+    &:hover {
+      ---bg-l: 77%;
+    }
+
+    &:active {
+      ---bg-l: 70%;
+    }
+  }
 }
 
-@mixin button--active {
-  ---bg-l: 50%;
-  ---text-l: 90%;
-
-  &:hover {
-    ---bg-l: 47%;
-  }
-
-  &:active {
-    ---bg-l: 40%;
-  }
-}
-
-@mixin button--primary {
-  ---bg-h: 34deg;
-  ---bg-s: 80%;
-  ---bg-l: 80%;
-  ---text-h: 34deg;
-  ---text-s: 80%;
-  ---text-l: 15%;
-
-  &:hover {
-    ---bg-l: 77%;
-  }
-
-  &:active {
-    ---bg-l: 70%;
-  }
-}
-@mixin button--error {
-  ---bg-h: 0deg;
-  ---bg-s: 80%;
-  ---bg-l: 80%;
-  ---text-h: 0deg;
-  ---text-s: 80%;
-  ---text-l: 20%;
-
-  &:hover {
-    ---bg-l: 77%;
-  }
-
-  &:active {
-    ---bg-l: 70%;
-  }
-}
-@mixin dialog {
+.pk-dialog {
   display: flex;
   flex-flow: column;
   gap: 0.5rem;
@@ -89,20 +91,20 @@
   border-radius: 0.5rem;
   border-top-left-radius: 0;
   max-width: 32rem;
-}
 
-@mixin dialog__title {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  padding: 0;
-  margin: 0;
-  word-break: break-all;
-}
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    word-break: break-all;
+  }
 
-@mixin dialog__options {
-  display: flex;
-  justify-content: end;
-  gap: 0.5rem;
+  &__options {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+  }
 }

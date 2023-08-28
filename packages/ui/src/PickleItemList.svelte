@@ -1,9 +1,9 @@
-<div class="pickle-item-list">
+<div class="list">
   <slot />
 </div>
 
 <style lang="scss">
-  .pickle-item-list {
+  .list {
     display: flex;
     flex-flow: column;
     width: fit-content;

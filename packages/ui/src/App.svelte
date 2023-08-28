@@ -43,16 +43,16 @@
   </a>
   <nav class="pickle__nav">
     <button
-      class="pickle__button"
-      class:pickle__button--open={isListOpen}
+      class="pk-button"
+      class:pk-button--active={isListOpen}
       on:click={() => (isListOpen = !isListOpen)}
       title="Toggle Pickle List"
     >
       <Icon icon="layout-list" size={16} />
     </button>
     <button
-      class="pickle__button"
-      class:pickle__button--open={isFormOpen}
+      class="pk-button"
+      class:pk-button--active={isFormOpen}
       on:click={openForm}
       title="Save Current Pickle"
     >
@@ -85,7 +85,6 @@
 </div>
 
 <style lang="scss">
-  @use "./base.scss";
   .pickle {
     display: flex;
     flex-flow: column;
@@ -93,12 +92,6 @@
     &__nav {
       display: flex;
       gap: 0.5rem;
-    }
-    &__button {
-      @include base.button;
-      &--open {
-        @include base.button--active;
-      }
     }
   }
 </style>

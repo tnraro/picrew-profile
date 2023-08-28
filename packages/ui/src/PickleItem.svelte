@@ -17,12 +17,12 @@
   setContext("context", context);
 </script>
 
-<div class="pickle-item">
+<div class="item">
   <slot />
 </div>
 
 <style lang="scss">
-  .pickle-item {
+  .item {
     display: flex;
     justify-content: space-between;
     gap: 0.5rem;
