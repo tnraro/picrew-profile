@@ -1,13 +1,13 @@
 <script lang="ts">
   import { pickle } from "@pickle/model";
-  import Modal from "./libs/Modal.svelte";
-  import { getContext } from "svelte";
+  import { createEventDispatcher, getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import Icon from "./Icon.svelte";
+  import Modal from "./libs/Modal.svelte";
   let top = 0;
   let left = 0;
   let isOpen = false;
-  export let onChange = () => {};
+  const dispatch = createEventDispatcher();
   const openDialog = (e: MouseEvent) => {
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
     top = rect.y;
@@ -18,7 +18,9 @@
     if (pickleId == null || picrewId == null) {
       throw new Error("pickleId or picrewId is missing");
     }
-    pickle.removePickle(picrewId, pickleId).then(onChange);
+    pickle.removePickle(picrewId, pickleId).then(() => {
+      dispatch("change");
+    });
     isOpen = false;
   };
   const context =

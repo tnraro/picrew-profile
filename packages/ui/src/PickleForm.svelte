@@ -1,8 +1,8 @@
 <script lang="ts">
   import { pickle, picrew } from "@pickle/model";
+  import { createEventDispatcher } from "svelte";
   import { currentPicrewId, hashObject } from "./libs/utils";
-  export let onChange = () => {};
-  export let onCancel = () => {};
+  const dispatch = createEventDispatcher();
   const onSubmit = async (e: Event) => {
     const data = new FormData(e.currentTarget as HTMLFormElement);
     const name = data.get("name")?.toString().trim() ?? "";
@@ -18,7 +18,7 @@
       : await picrew.getParts(picrewId);
     const pickleId = hashObject(parts);
     await pickle.setPickle(picrewId, pickleId, name, parts);
-    onChange();
+    dispatch("change");
   };
 </script>
 
@@ -29,7 +29,11 @@
     <input class="pickle-form__input" name="name" required />
   </label>
   <div class="pickle-form__options">
-    <button type="reset" class="pickle-form__option" on:click={onCancel}>
+    <button
+      type="reset"
+      class="pickle-form__option"
+      on:click={() => dispatch("cancel")}
+    >
       cancel
     </button>
     <button class="pickle-form__option pickle-form__option--primary">

@@ -60,11 +60,11 @@
     </button>
     <Modal bind:isOpen={isFormOpen} top={formTop} left={formLeft}>
       <PickleForm
-        onChange={() => {
+        on:change={() => {
           isFormOpen = false;
           updatePickles();
         }}
-        onCancel={() => (isFormOpen = false)}
+        on:cancel={() => (isFormOpen = false)}
       />
     </Modal>
   </nav>
@@ -77,7 +77,7 @@
           name={p.pickle_name}
         >
           <PickleItemName />
-          <PickleItemRemoveButton onChange={updatePickles} />
+          <PickleItemRemoveButton on:change={updatePickles} />
         </Pickle>
       {/each}
     </PickleItemList>
