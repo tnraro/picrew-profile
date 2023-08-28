@@ -7,7 +7,6 @@
     const data = new FormData(e.currentTarget as HTMLFormElement);
     const name = data.get("name")?.toString().trim() ?? "";
     if (name.length === 0) return;
-    console.log(name);
     const picrewId = currentPicrewId();
     const parts = import.meta.env.DEV
       ? ([...Array((Math.random() * 10 + 1) | 0)].map((x) => ({
