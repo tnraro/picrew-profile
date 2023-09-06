@@ -1,29 +1,12 @@
 <script lang="ts">
-  import { onDestroy, onMount } from "svelte";
-  import Portal from "./Portal.svelte";
   import { focusTrap } from "../actions/focusTrap";
+  import Portal from "./Portal.svelte";
   export let isOpen = false;
   export let top = 0;
   export let left = 0;
   const close = () => {
     isOpen = false;
   };
-
-  const escHandler = (e: KeyboardEvent) => {
-    if (isOpen) {
-      if (e.key === "Escape") {
-        e.stopImmediatePropagation();
-        e.preventDefault();
-        close();
-      }
-    }
-  };
-  onMount(() => {
-    window.addEventListener("keydown", escHandler);
-  });
-  onDestroy(() => {
-    window.removeEventListener("keydown", escHandler);
-  });
 </script>
 
 {#if isOpen}
@@ -42,6 +25,15 @@
     </div>
   </Portal>
 {/if}
+<svelte:window on:keydown={(e) => {
+  if (isOpen) {
+    if (e.key === "Escape") {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+      close();
+    }
+  }
+}} />
 
 <style lang="scss">
   .modal {
