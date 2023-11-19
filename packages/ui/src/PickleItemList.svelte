@@ -1,9 +1,9 @@
-<div class="list">
+<div class="pk-list">
   <slot />
 </div>
 
 <style lang="scss">
-  .list {
+  .pk-list {
     display: flex;
     flex-flow: column;
     width: fit-content;

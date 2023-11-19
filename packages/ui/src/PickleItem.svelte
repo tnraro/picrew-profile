@@ -17,12 +17,12 @@
   setContext("context", context);
 </script>
 
-<div class="item">
+<div class="pk-item">
   <slot />
 </div>
 
 <style lang="scss">
-  .item {
+  .pk-item {
     display: flex;
     justify-content: space-between;
     gap: 0.5rem;

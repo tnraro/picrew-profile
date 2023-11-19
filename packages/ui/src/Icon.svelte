@@ -7,7 +7,7 @@
   $: content = icons.get(icon) ?? "";
 </script>
 
-<svg class="icon"
+<svg class="pk-icon"
   xmlns="http://www.w3.org/2000/svg"
   width={size}
   height={size}
@@ -17,7 +17,7 @@
 </svg>
 
 <style>
-  .icon {
+  .pk-icon {
     fill: none;
     stroke: currentColor;
     stroke-width: 2;

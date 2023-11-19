@@ -47,7 +47,7 @@
 <Modal bind:isOpen {top} {left}>
   <div class="pk-dialog" role="dialog">
     <h1 class="pk-dialog__title">
-      <div class="icon">
+      <div class="pk-icon">
         <Icon icon="alert-triangle" size={20} />
       </div>
       Delete "{name}"
@@ -70,7 +70,7 @@
 </Modal>
 
 <style lang="scss">
-  .icon {
+  .pk-icon {
     flex-shrink: 0;
   }
 </style>
